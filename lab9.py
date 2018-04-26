@@ -1,4 +1,5 @@
 import boto3
+from pprint import pprint as pp
 
 pub1_sub_id = ''
 pub2_sub_id = ''
@@ -10,7 +11,7 @@ igw_id = ''
 sg_id = ''
 instance_id = ''
 cidr = '10.50.0.0/22'
-my_ip = '{add_later}'
+my_ip = '34.210.73.72'
 ami_id = 'ami-bc39e1c3'
 instance_type = 't2.nano'
 subnet_list = [
@@ -46,7 +47,7 @@ rt_list = [
           ]
 
 class VpcBuild():
-    def __init(self):
+    def __init__(self):
         region = 'us-east-1'
         session = boto3.session.Session(region_name = region)
         self.vpc = session.client('ec2') #typo?
@@ -75,12 +76,13 @@ class VpcBuild():
         global igw_id
         new_igw = self.vpc.create_internet_gateway()
         igw_id = new_igw['InternetGateway']['InternetGatewayId']
-        att_igw = self.vpc.attach_internet_gateway()
+        att_igw = self.vpc.attach_internet_gateway(InternetGatewayId = igw_id,
+                                                   VpcId = self.vpc_id)
 
     def RtBuild(self):
         global pub_rt_id
         global pri_rt_id
-        for rt in route_table_list:
+        for rt in rt_list:
             new_rt = self.vpc.create_route_table(VpcId = self.vpc_id)
             if rt['Name'] == 'pub_rt':
                 pub_rt_id = new_rt['RouteTable']['RouteTableId']
@@ -126,6 +128,7 @@ class VpcBuild():
                                                 'AssociatePublicIpAddress':True,
                                                 'DeleteOnTermination':True
                                               }])
+        instance_id = new_instance['Instances'][0]['InstanceId']
 
     def CreateTags(self):
         subnet_tag_list = [
@@ -152,7 +155,6 @@ class VpcBuild():
                                     'RouteTableId':pri_rt_id
                                  }
                                ]
-
         self.vpc.create_tags(Resources = [self.vpc_id, instance_id],
                              Tags = [{'Key':'Name','Value':'python_vpc'}])
         for subnet in subnet_tag_list:
