@@ -1,7 +1,7 @@
 import sys
 from openpyxl import load_workbook
 
-filename = 'home/student/ipwsp/aws/AWS_SEED.xlsx'
+filename = '/home/student/ipwsp/aws/AWS_SEED.xlsx'
 column = 'A'
 row = 3
 
