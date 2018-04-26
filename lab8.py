@@ -14,25 +14,25 @@ session = aws.client(service, region_name = region)
 new_vpc = session.create_vpc(CidrBlock = vpc_cidr)
 vpc = json.dumps(new_vpc, indent = 2)
 vpc_json = json.loads(vpc)
-for vpc_config in vps_json.values():
-    for key, value in vpc_config.iteritems()
-    if key == 'VpcId':
-        vpc_id = values
+for vpc_config in vpc_json.values():
+    for key, value in vpc_config.iteritems():
+		if key == 'VpcId':
+			vpc_id = value
 
 pub1_subnet_build = session.create_subnet(VpcId = vpc_id, CidrBlock = pub1_subnet)
 sub1_dumps = json.dumps(pub1_subnet_build, indent = 2)
 sub1_json = json.loads(sub1_dumps)
 for sub_data in sub1_json.values():
     for key, value in sub_data.iteritems():
-        if key = 'SubnetId':
+        if key == 'SubnetId':
             pub1_sub_id = value
 
 new_igw = session.create_internet_gateway()
 igw = json.dumps(new_igw, indent = 2)
-igw_json = json.lods(igw)
+igw_json = json.loads(igw)
 for igw_config in igw_json.values():
-    for key, value in igw_config.iteritems()
-        if key = 'InternetGatewayId':
+    for key, value in igw_config.iteritems():
+        if key == 'InternetGatewayId':
             igw_id = value
 att_igw = session.attach_internet_gateway(InternetGatewayId = igw_id, VpcId = vpc_id)
 
@@ -41,7 +41,7 @@ pub_rt_dumps = json.dumps(pub_rt, indent = 2)
 pub_rt_json = json.loads(pub_rt_dumps)
 for rt_data in pub_rt_json.values():
     for key, value in rt_data.iteritems():
-        if key = 'RouteTableId':
+        if key == 'RouteTableId':
             pub_rt_id = value
 
 rt_assoc_pub1 = session.associate_route_table(RouteTableId = pub_rt_id,
@@ -65,7 +65,7 @@ new_instance = session.run_instances(ImageId = ami_id,
                                      MinCount = 1,
                                      MaxCount = 1,
                                      NetworkInterfaces = [{ 'DeviceIndex' : 0,
-                                                            'SubnetId' : pub1pub1_sub_id,
+                                                            'SubnetId' : pub1_sub_id,
                                                             'Groups' : [sg_id],
                                                             'AssociatePublicIpAddress' : True,
                                                             'DeleteOnTermination' : True}])
