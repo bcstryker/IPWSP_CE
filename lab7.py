@@ -1,7 +1,7 @@
 import sys
 from openpyxl import load_workbook
 
-filename = 'home/student/ipwsp/aws/AWS_SEED.xlsx'
+filename = '/home/student/ipwsp/aws/AWS_SEED.xlsx'
 column = 'A'
 row = 3
 
@@ -16,7 +16,7 @@ class AWS_VPC():
 
     def get_row(self, col, row = 1, start_row = 0, max_row = 4):
         ws = self.wb.active
-        sheet = wb['Sheet1']
+        sheet = self.wb['Sheet1']
         if max_row > sheet.max_row:
             print 'Max row referenced out of range.'
             print 'Setting max row to {}'.format(sheet.max_row)
@@ -24,11 +24,11 @@ class AWS_VPC():
         test_list = []
         for row in range(start_row, max_row):
             #the following line is confusing and seems unnecessary
-            for column in '{}''.format(column):
+            for column in '{}'.format(col):
                 cell_name = column + str(row)
                 x = sheet[cell_name].value
                 test_list.append(x)
-            return test_list
+        return test_list
 
 def main():
     vpc_console1 = AWS_VPC()
