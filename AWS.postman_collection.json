@@ -1,0 +1,602 @@
+{
+	"info": {
+		"_postman_id": "83b9d90d-c35f-33fb-0ba1-93ff2e8f86c2",
+		"name": "AWS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Build VPC",
+			"request": {
+				"auth": {
+					"type": "awsv4",
+					"awsv4": [
+						{
+							"key": "region",
+							"value": "us-west-1",
+							"type": "string"
+						},
+						{
+							"key": "service",
+							"value": "ec2",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://ec2.us-west-1.amazonaws.com/?Action=CreateVpc&Version=2016-11-15&CidrBlock=10.20.0.0/22",
+					"protocol": "https",
+					"host": [
+						"ec2",
+						"us-west-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						""
+					],
+					"query": [
+						{
+							"key": "Action",
+							"value": "CreateVpc"
+						},
+						{
+							"key": "Version",
+							"value": "2016-11-15"
+						},
+						{
+							"key": "CidrBlock",
+							"value": "10.20.0.0/22"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Subnet Build PubA",
+			"request": {
+				"auth": {
+					"type": "awsv4",
+					"awsv4": [
+						{
+							"key": "region",
+							"value": "us-west-1",
+							"type": "string"
+						},
+						{
+							"key": "service",
+							"value": "ec2",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://ec2.us-west-1.amazonaws.com/?Action=CreateSubnet&Version=2016-11-15&VpcId=<vpc>&CidrBlock=10.20.0.0/24&AvailabilityZone=us-west-1a",
+					"protocol": "https",
+					"host": [
+						"ec2",
+						"us-west-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						""
+					],
+					"query": [
+						{
+							"key": "Action",
+							"value": "CreateSubnet"
+						},
+						{
+							"key": "Version",
+							"value": "2016-11-15"
+						},
+						{
+							"key": "VpcId",
+							"value": "<vpc>"
+						},
+						{
+							"key": "CidrBlock",
+							"value": "10.20.0.0/24"
+						},
+						{
+							"key": "AvailabilityZone",
+							"value": "us-west-1a"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Subnet Build PubB",
+			"request": {
+				"auth": {
+					"type": "awsv4",
+					"awsv4": [
+						{
+							"key": "region",
+							"value": "us-west-1",
+							"type": "string"
+						},
+						{
+							"key": "service",
+							"value": "ec2",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://ec2.us-west-1.amazonaws.com/?Action=CreateSubnet&Version=2016-11-15&VpcId=<vpc>&CidrBlock=10.20.1.0/24&AvailabilityZone=us-west-1b",
+					"protocol": "https",
+					"host": [
+						"ec2",
+						"us-west-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						""
+					],
+					"query": [
+						{
+							"key": "Action",
+							"value": "CreateSubnet"
+						},
+						{
+							"key": "Version",
+							"value": "2016-11-15"
+						},
+						{
+							"key": "VpcId",
+							"value": "<vpc>"
+						},
+						{
+							"key": "CidrBlock",
+							"value": "10.20.1.0/24"
+						},
+						{
+							"key": "AvailabilityZone",
+							"value": "us-west-1b"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Subnet Build PriA",
+			"request": {
+				"auth": {
+					"type": "awsv4",
+					"awsv4": [
+						{
+							"key": "region",
+							"value": "us-west-1",
+							"type": "string"
+						},
+						{
+							"key": "service",
+							"value": "ec2",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://ec2.us-west-1.amazonaws.com/?Action=CreateSubnet&Version=2016-11-15&VpcId=<vpc>&CidrBlock=10.20.2.0/24&AvailabilityZone=us-west-1a",
+					"protocol": "https",
+					"host": [
+						"ec2",
+						"us-west-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						""
+					],
+					"query": [
+						{
+							"key": "Action",
+							"value": "CreateSubnet"
+						},
+						{
+							"key": "Version",
+							"value": "2016-11-15"
+						},
+						{
+							"key": "VpcId",
+							"value": "<vpc>"
+						},
+						{
+							"key": "CidrBlock",
+							"value": "10.20.2.0/24"
+						},
+						{
+							"key": "AvailabilityZone",
+							"value": "us-west-1a"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Subnet Build PriB",
+			"request": {
+				"auth": {
+					"type": "awsv4",
+					"awsv4": [
+						{
+							"key": "region",
+							"value": "us-west-1",
+							"type": "string"
+						},
+						{
+							"key": "service",
+							"value": "ec2",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://ec2.us-west-1.amazonaws.com/?Action=CreateSubnet&Version=2016-11-15&VpcId=<vpc>&CidrBlock=10.20.3.0/24&AvailabilityZone=us-west-1b",
+					"protocol": "https",
+					"host": [
+						"ec2",
+						"us-west-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						""
+					],
+					"query": [
+						{
+							"key": "Action",
+							"value": "CreateSubnet"
+						},
+						{
+							"key": "Version",
+							"value": "2016-11-15"
+						},
+						{
+							"key": "VpcId",
+							"value": "<vpc>"
+						},
+						{
+							"key": "CidrBlock",
+							"value": "10.20.3.0/24"
+						},
+						{
+							"key": "AvailabilityZone",
+							"value": "us-west-1b"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "IGW Build",
+			"request": {
+				"auth": {
+					"type": "awsv4",
+					"awsv4": [
+						{
+							"key": "region",
+							"value": "us-west-1",
+							"type": "string"
+						},
+						{
+							"key": "service",
+							"value": "ec2",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://ec2.us-west-1.amazonaws.com/?Action=CreateInternetGateway&Version=2016-11-15",
+					"protocol": "https",
+					"host": [
+						"ec2",
+						"us-west-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						""
+					],
+					"query": [
+						{
+							"key": "Action",
+							"value": "CreateInternetGateway"
+						},
+						{
+							"key": "Version",
+							"value": "2016-11-15"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Attach IGW",
+			"request": {
+				"auth": {
+					"type": "awsv4",
+					"awsv4": [
+						{
+							"key": "region",
+							"value": "us-west-1",
+							"type": "string"
+						},
+						{
+							"key": "service",
+							"value": "ec2",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://ec2.us-west-1.amazonaws.com/?Action=AttachInternetGateway&Version=2016-11-15&VpcId=<vpc>&InternetGateway=<igw>",
+					"protocol": "https",
+					"host": [
+						"ec2",
+						"us-west-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						""
+					],
+					"query": [
+						{
+							"key": "Action",
+							"value": "AttachInternetGateway"
+						},
+						{
+							"key": "Version",
+							"value": "2016-11-15"
+						},
+						{
+							"key": "VpcId",
+							"value": "<vpc>"
+						},
+						{
+							"key": "InternetGateway",
+							"value": "<igw>"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Route Table",
+			"request": {
+				"auth": {
+					"type": "awsv4",
+					"awsv4": [
+						{
+							"key": "region",
+							"value": "us-west-1",
+							"type": "string"
+						},
+						{
+							"key": "service",
+							"value": "ec2",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://ec2.us-west-1.amazonaws.com/?Action=CreateRouteTable&Version=2016-11-15&VpcId=<vpc>",
+					"protocol": "https",
+					"host": [
+						"ec2",
+						"us-west-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						""
+					],
+					"query": [
+						{
+							"key": "Action",
+							"value": "CreateRouteTable"
+						},
+						{
+							"key": "Version",
+							"value": "2016-11-15"
+						},
+						{
+							"key": "VpcId",
+							"value": "<vpc>"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Associate Subnet",
+			"request": {
+				"auth": {
+					"type": "awsv4",
+					"awsv4": [
+						{
+							"key": "region",
+							"value": "us-west-1",
+							"type": "string"
+						},
+						{
+							"key": "service",
+							"value": "ec2",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://ec2.us-west-1.amazonaws.com/?Action=AssociateRouteTable&Version=2016-11-15&RouteTableId=<rt>&SubnetId=<sub>",
+					"protocol": "https",
+					"host": [
+						"ec2",
+						"us-west-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						""
+					],
+					"query": [
+						{
+							"key": "Action",
+							"value": "AssociateRouteTable"
+						},
+						{
+							"key": "Version",
+							"value": "2016-11-15"
+						},
+						{
+							"key": "RouteTableId",
+							"value": "<rt>"
+						},
+						{
+							"key": "SubnetId",
+							"value": "<sub>"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Route",
+			"request": {
+				"auth": {
+					"type": "awsv4",
+					"awsv4": [
+						{
+							"key": "region",
+							"value": "us-west-1",
+							"type": "string"
+						},
+						{
+							"key": "service",
+							"value": "ec2",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://ec2.us-west-1.amazonaws.com/?Action=CreateRoute&Version=2016-11-15&VpcId=<vpc>",
+					"protocol": "https",
+					"host": [
+						"ec2",
+						"us-west-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						""
+					],
+					"query": [
+						{
+							"key": "Action",
+							"value": "CreateRoute"
+						},
+						{
+							"key": "Version",
+							"value": "2016-11-15"
+						},
+						{
+							"key": "VpcId",
+							"value": "<vpc>"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Vpcs",
+			"request": {
+				"auth": {
+					"type": "awsv4",
+					"awsv4": [
+						{
+							"key": "region",
+							"value": "us-west-1",
+							"type": "string"
+						},
+						{
+							"key": "service",
+							"value": "ec2",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://ec2.us-west-1.amazonaws.com/?Action=DescribeVpcs&Version=2016-11-15",
+					"protocol": "https",
+					"host": [
+						"ec2",
+						"us-west-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						""
+					],
+					"query": [
+						{
+							"key": "Action",
+							"value": "DescribeVpcs"
+						},
+						{
+							"key": "Version",
+							"value": "2016-11-15"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
