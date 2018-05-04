@@ -4,3 +4,7 @@ https://drive.google.com/open?id=14dLcnwUNISz3l14KP3lrVFHY-kb1FHgi
 lab guide
 https://drive.google.com/open?id=0B_GYoQzA7k7rTndWbjNGenAzQzQ
 
+aws lambda
+https://docs.aws.amazon.com/lambda/latest/dg/with-s3-example-prepare.html
+
+https://codeburst.io/aws-lambda-functions-made-easy-1fae0feeab27
